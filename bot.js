@@ -1,3 +1,12 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const fs = require('fs');
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag} !`);
+          client.user.setActivity("νι¢тσяу ¢ℓαη , r#help .",{type: 'WATCHING'});
+ 
+  });
+
 const moment = require('moment')
 const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
