@@ -1,5 +1,5 @@
-var Discord = require('discord.js'); 
-var client = new Discord.Client();  
+ const Discord = require('discord.js'); 
+const client = new Discord.Client(); 
 const moment = require('moment')
 const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
