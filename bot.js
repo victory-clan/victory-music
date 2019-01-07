@@ -1,3 +1,4 @@
+const client = new Discord.Client();
 client.on('ready', function(){    
     var ms = 10000 ;    
     var setGame = ['by I Have A Dream 🎓#1033','--play','كثر الحاقدين يثير اعجابي','F5R BOT يتمنى لكم قضاء اجمل الاوقات'];    
