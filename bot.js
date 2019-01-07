@@ -1,4 +1,16 @@
-client.on('ready', function(){    
+var Discord = require('discord.js'); 
+var client = new Discord.Client();  
+const moment = require('moment')
+const ytdl = require("ytdl-core");
+const { Client, Util } = require('discord.js');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");//youtube api key
+const queue = new Map();//the queue map
+const prefix = '--'//your prefix
+
+client.on('ready', () => {
     var ms = 10000 ;    
     var setGame = ['by I Have A Dream 🎓#1033','--play','كثر الحاقدين يثير اعجابي','F5R BOT يتمنى لكم قضاء اجمل الاوقات'];    
     var i = -1;    
@@ -16,17 +28,6 @@ j = 1;
     
 });
 
-const moment = require('moment')
-const ytdl = require("ytdl-core");
-const { Client, Util } = require('discord.js');
-const getYoutubeID = require('get-youtube-id');
-const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");//youtube api key
-const queue = new Map();//the queue map
-const prefix = '--'//your prefix
- 
- 
  
 /*
 Packages
@@ -45,7 +46,7 @@ client.on('ready', () => {//the ready msgs
 });
  
 client.on('message', async msg => {
-    if (msg.author.bot) return undefined;
+    if (msg.author.client) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     const args = msg.content.split(' ');
     const searchString = args.slice(1).join(' ');
@@ -334,4 +335,5 @@ function play(guild, song) {
 })
 }
 }); //Toxic Codes
+
 client.login(process.env.BOT_TOKEN);
