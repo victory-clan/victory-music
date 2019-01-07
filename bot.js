@@ -336,3 +336,5 @@ function play(guild, song) {
 })
 }
 }); //Toxic Codes
+
+client.login('process.env.BOT_TOKEN');
