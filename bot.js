@@ -3,7 +3,7 @@ const client = new Discord.Client();
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity("$play By !ν¢ |Bako gaming 🎓#1033",{type: 'WATCHING'})
+   client.user.setActivity("$play By !ν¢ |Bako gaming 🎓#1033",{type: 'WATCHING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -230,7 +230,7 @@ function play(guild, song) {
 }
  
 const adminprefix = "$vip";
-const devs = ['274923685985386496'];
+const devs = ['413597534187945986'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
