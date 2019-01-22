@@ -273,7 +273,69 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    }
    });
  
- 
- 
+client.on('message', message => {
+     if (message.content === (prefix + "bot")) {
+         if(!message.channel.guild) return;
+     let embed = new Discord.RichEmbed()
+  .setColor("#8650a7")
+  .addField("** ✅ Servers: **" , client.guilds.size)
+  .addField("** ✅ Users: **" , client.users.size)
+  .addField("** ✅ Channels: **" , client.channels.size)
+    .addField("** 🚀 Ping **" , Date.now() - message.createdTimestamp)
+    .setTimestamp()
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor(0x5500ff)
+  .setDescription(`** شكراً لك لإضافه البوت الى سيرفرك ممكن تدخل سيرفر الدعم الفنى  :https://discord.gg/H5DvcrN**`)
+      guild.owner.send(embed)
+});
+
+client.on('message', message => {
+if(message.content == (prefix + "owner")) {
+         if(!message.author.id === '529756005786058755') return;
+var gimg;
+var gname;
+var gmemb;
+var gbots;
+var groles;
+var servers = client.guilds;
+servers.forEach((g)=>{
+gname = g.name;
+gimg = g.iconURL;
+gmemb = g.members.size;
+gbots = g.members.filter(m=>m.bot).size;
+groles = g.roles.map(r=> {return r.name});
+let serv = new Discord.RichEmbed()
+.setAuthor(gname,gimg)
+.setThumbnail(gimg)
+.addField('Server bots',gbots)
+.addField('Server Member Count',gmemb = g.members.size)
+.setColor('RANDOM')
+message.channel.send(`
+Server Name : **${gname}**
+Server MemberCount : **${gmemb} **
+        `);
+      message.channel.sendEmbed(serv);
+}) 
+}
+});
+
+   client.on('message', message => {
+       if(message.content.startsWith(`$invite`)){
+           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
+                 message.react('🌈')
+           var embed = new Discord.RichEmbed()
+           .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
+           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
+           .setTimestamp()
+           .setFooter(`Requested By | ${message.author.username}`) 
+           .setColor("RANDOM")
+           message.author.send({embed}) 
+       }// 
+   });
  
 client.login(process.env.BOT_TOKEN);
