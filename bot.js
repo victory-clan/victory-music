@@ -230,7 +230,7 @@ function play(guild, song) {
 }
  
 const adminprefix = "$vip";
-const devs = ['274923685985386496'];
+const devs = ['413597534187945986'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -342,9 +342,10 @@ Server MemberCount : **${gmemb} **
     var prefix = "$";
     let args = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(prefix + "say")) {
+        message.channel.then.message.delete(10000)}
     if(!args) return;
     message.channel.send(`**${args}**`);
     }
-    });
+    );
 
 client.login(process.env.BOT_TOKEN);
