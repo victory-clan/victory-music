@@ -3,6 +3,7 @@ const client = new Discord.Client();
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setActivity("$play By !ν¢ |Bako gaming 🎓#1033",{type: 'WATCHING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -337,11 +338,13 @@ Server MemberCount : **${gmemb} **
        }// 
    });
 
-// كود الواتشينق
-client.on('ready', () => {
-        console.log(`back`);
-              client.user.setActivity("$play by !ν¢ |Bako gaming 🎓#1033", {type: 'WATCHING'});
-      
-      });
+  client.on('message',function(message) {
+    var prefix = "$";
+    let args = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(prefix + "say")) {
+    if(!args) return;
+    message.channel.send(`**${args}**`);
+    }
+    });
 
 client.login(process.env.BOT_TOKEN);
