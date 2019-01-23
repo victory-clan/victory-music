@@ -3,7 +3,7 @@ const client = new Discord.Client();
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-   client.user.setActivity("!play By !ν¢ |Bako gaming 🎓#1033",{type: 'WATCHING'})
+   client.user.setActivity("!play By !ν¢ |Bako gaming 🎓#1033",{type: 'LISTENING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -230,7 +230,7 @@ function play(guild, song) {
 }
  
 const adminprefix = "$vip";
-const devs = ['413597534187945986'];
+const devs = ['274923685985386496'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -267,11 +267,14 @@ ${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
 ${prefix}leave⇏ لإخرآج البوت من الروم
 ${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
 ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
-`)
+${prefix}resume ⇏ لتشغيل الاغنية مرة اخرة 
+ `)
    message.channel.sendEmbed(embed)
    
    }
    });
+
+client.login(process.env.BOT_TOKEN);
  
 client.on('message', message => {
      if (message.content === (prefix + "bot")) {
@@ -323,20 +326,6 @@ Server MemberCount : **${gmemb} **
 }) 
 }
 });
-
-   client.on('message', message => {
-       if(message.content.startsWith(`$invite`)){
-           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
-                 message.react('🌈')
-           var embed = new Discord.RichEmbed()
-           .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
-           .setTimestamp()
-           .setFooter(`Requested By | ${message.author.username}`) 
-           .setColor("RANDOM")
-           message.author.send({embed}) 
-       }// 
-   });
 
   client.on('message',function(message) {
     var prefix = "!";
