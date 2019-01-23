@@ -348,4 +348,4 @@ Server MemberCount : **${gmemb} **
     }
     );
 
-client.login('Token');
+client.login(process.env.BOT_TOKEN);
