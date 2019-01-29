@@ -3,7 +3,7 @@ const client = new Discord.Client();
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-   client.user.setActivity("!play By !ν¢ |Bako gaming 🎓#1033",{type: 'LISTENING'})
+   client.user.setActivity(" Sarcasm Land. !help ",{type: 'LISTENING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
