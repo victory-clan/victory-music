@@ -3,7 +3,7 @@ const client = new Discord.Client();
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-   client.user.setActivity(" Sarcasm Land. !help ",{type: 'LISTENING'})
+   client.user.setActivity(" Sarcasm Land. %help ",{type: 'LISTENING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -37,7 +37,7 @@ const queue = new Map();
  
  
  
-var prefix = "!" 
+var prefix = "%" 
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
    
@@ -328,7 +328,7 @@ Server MemberCount : **${gmemb} **
 });
 
   client.on('message',function(message) {
-    var prefix = "!";
+    var prefix = "%";
     let args = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(prefix + "say")) {
         message.channel.then.message.delete(10000)}
