@@ -3,7 +3,7 @@ const client = new Discord.Client();
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-   client.user.setActivity(" Sarcasm Land. %help ",{type: 'LISTENING'})
+   client.user.setActivity(" Arab || 1play ",{type: 'LISTENING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -37,7 +37,7 @@ const queue = new Map();
  
  
  
-var prefix = "%" 
+var prefix = "1" 
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
    
@@ -88,7 +88,7 @@ client.on('message', async msg => {
                     .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
  
-                    .setFooter("By !ν¢ |Bako gaming#6414")
+                    .setFooter("413597534187945986")
                     msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
                    
                     // eslint-disable-next-line max-depth
@@ -290,16 +290,9 @@ client.on('message', message => {
     }
 });
 
-client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setDescription(`** شكراً لك لإضافه البوت الى سيرفرك ممكن تدخل سيرفر الدعم الفنى  :https://discord.gg/H5DvcrN**`)
-      guild.owner.send(embed)
-});
-
 client.on('message', message => {
 if(message.content == (prefix + "owner")) {
-         if(!message.author.id === '529756005786058755') return;
+         if(!message.author.id === '413597534187945986') return;
 var gimg;
 var gname;
 var gmemb;
